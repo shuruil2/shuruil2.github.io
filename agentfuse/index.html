@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9fc">
+  <meta name="description" content="AgentFuse: task-driven agentic evidence arbitration for infrared-visible image fusion. A structured vision-language plan controls spatial prompting, prompt modulation, and expert routing for downstream perception.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AgentFuse — Task-Driven Evidence Arbitration">
+  <meta property="og:description" content="From high-level task reasoning to executable controls for infrared-visible image fusion.">
+  <meta property="og:image" content="assets/agentfuse-framework.png">
+  <title>AgentFuse | Task-Driven Agentic Evidence Arbitration</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="config.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="AgentFuse home">
+        <span class="brand-mark">AF</span>
+        <span>AgentFuse</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#efficiency">Efficiency</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" id="top">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> Infrared–Visible Image Fusion · Task-Driven Perception</div>
+        <h1>AgentFuse<span class="title-period">.</span></h1>
+        <p class="hero-subtitle">Task-Driven Agentic Evidence Arbitration for Infrared–Visible Image Fusion</p>
+        <p class="hero-lead">From high-level task reasoning to executable, sample-specific control over multimodal evidence.</p>
+        <div class="author-block" id="author-block">Author names and affiliations</div>
+        <div class="hero-actions">
+          <a class="button button-primary is-disabled" id="paper-link" href="#resources" aria-disabled="true">Paper PDF <span>↗</span></a>
+          <a class="button button-secondary is-disabled" id="code-link" href="#resources" aria-disabled="true">Code <span>↗</span></a>
+          <a class="button button-quiet" href="#citation">BibTeX <span>↓</span></a>
+        </div>
+        <p class="availability-note" id="availability-note">Paper and code links can be enabled in <code>config.js</code> when they are ready to share.</p>
+      </div>
+      <div class="hero-aside" aria-label="Core idea">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-core">
+          <span class="core-label">Agent plan</span>
+          <div class="core-symbol" aria-hidden="true"><span></span><span></span><span></span></div>
+          <span class="core-caption">Reasoning → Control</span>
+        </div>
+        <div class="orbit-tag tag-where"><span>01</span> Where?</div>
+        <div class="orbit-tag tag-what"><span>02</span> Which modality?</div>
+        <div class="orbit-tag tag-how"><span>03</span> How?</div>
+      </div>
+    </section>
+
+    <section class="section-shell framework-section" aria-labelledby="framework-heading">
+      <div class="section-heading heading-row">
+        <div>
+          <p class="section-kicker">At a glance</p>
+          <h2 id="framework-heading">One plan. Three control pathways.</h2>
+        </div>
+        <p class="heading-note">The structured plan connects task and scene understanding to the fusion network's spatial, modality, and operational decisions.</p>
+      </div>
+      <figure class="figure-card framework-card">
+        <img src="assets/agentfuse-framework.png" alt="AgentFuse framework: a vision-language agent creates a structured plan that guides spatial prompting, plan-conditioned prompt modulation, and operation-aware expert routing before image reconstruction." loading="lazy">
+        <figcaption>Overview of AgentFuse, showing agent planning and three coordinated fusion-control pathways.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section-shell abstract-section" id="abstract">
+      <div class="section-heading">
+        <p class="section-kicker">Overview</p>
+        <h2>Abstract</h2>
+      </div>
+      <div class="abstract-card">
+        <p>Infrared–visible image fusion aims to integrate complementary multimodal evidence for downstream perception, yet existing methods typically learn a shared fusion policy that cannot adapt to task- and sample-specific requirements at inference time. To address this limitation, we propose <strong>AgentFuse</strong>, a task-driven evidence arbitration framework that reformulates fusion from static multimodal aggregation into task reasoning-guided adaptive control. Given an infrared–visible image pair and a task instruction, a vision-language agent jointly interprets the task objective and current observation to generate a structured plan describing spatial relevance, modality preference, and suitable fusion operations. AgentFuse translates this high-level plan into executable controls through three coordinated mechanisms: spatial prompting to determine where evidence should be emphasized, modality-aware prompt modulation to determine what evidence should be prioritized, and dynamic expert routing to determine how the selected evidence should be integrated. This design enables a unified fusion network to produce task-specific behaviors while adapting its evidence allocation to individual samples. Extensive experiments on multiple infrared–visible fusion benchmarks for semantic segmentation and object detection demonstrate that AgentFuse consistently generates fused images with improved downstream perception performance.</p>
+        <div class="keyword-row"><span>Keywords</span><i>Infrared–visible fusion</i><i>Vision-language models</i><i>Task-aware fusion</i><i>Semantic segmentation</i><i>Object detection</i></div>
+      </div>
+    </section>
+
+    <section class="section-shell method-section" id="method">
+      <div class="section-heading">
+        <p class="section-kicker">Core idea</p>
+        <h2>Reasoning becomes executable fusion control</h2>
+        <p class="section-intro">The agent does not merely describe the scene. Its structured, sample-specific plan is converted into signals that directly condition the fusion network.</p>
+      </div>
+      <div class="method-grid">
+        <article class="method-card spatial-card">
+          <div class="method-top"><span class="method-number">01</span><span class="method-question">Where?</span></div>
+          <div class="method-icon icon-spatial" aria-hidden="true"><span class="mask-shape"></span><span class="mask-point"></span></div>
+          <h3>Spatial Prompting</h3>
+          <p>Uses task-relevant target classes and a support mask to guide where multimodal evidence should be emphasized.</p>
+          <div class="method-output"><span>Control signal</span><code>M<sub>a</sub></code></div>
+        </article>
+        <article class="method-card modality-card">
+          <div class="method-top"><span class="method-number">02</span><span class="method-question">Which modality?</span></div>
+          <div class="method-icon icon-modality" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <h3>Prompt Modulation</h3>
+          <p>Encodes task and scene conditions into a plan representation that modulates visible and infrared prompts.</p>
+          <div class="method-output"><span>Control signal</span><code>z<sub>a</sub></code></div>
+        </article>
+        <article class="method-card routing-card">
+          <div class="method-top"><span class="method-number">03</span><span class="method-question">How?</span></div>
+          <div class="method-icon icon-routing" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+          <h3>Expert Routing</h3>
+          <p>Combines the plan embedding and operation vector to assign sample-dependent weights to fusion experts.</p>
+          <div class="method-output"><span>Control signal</span><code>α</code></div>
+        </article>
+      </div>
+      <div class="plan-bridge">
+        <div class="bridge-label">The reasoning-to-control interface</div>
+        <div class="bridge-flow"><span>Task instruction + RGB–IR observations</span><b>→</b><span>Structured agent plan <em>P</em></span><b>→</b><span>Executable controls</span><b>→</b><span>Unified fusion network</span></div>
+      </div>
+    </section>
+
+    <section class="section-shell results-section" id="results">
+      <div class="section-heading heading-row">
+        <div>
+          <p class="section-kicker">Task-conditioned behavior</p>
+          <h2>The same scene can call for different evidence.</h2>
+        </div>
+        <p class="heading-note">Changing the task instruction changes the plan and its control signals, while the downstream evaluation model remains fixed.</p>
+      </div>
+      <div class="comparison-layout">
+        <figure class="figure-card comparison-figure">
+          <img src="assets/task-conditioned-comparison.png" alt="Three qualitative semantic-segmentation examples comparing support masks and segmentation outputs under different task-conditioned plans, with discrepancy regions highlighted." loading="lazy">
+          <figcaption>Qualitative comparison of task-conditioned support masks and segmentation outputs, with representative discrepancies highlighted.</figcaption>
+        </figure>
+        <div class="comparison-copy">
+          <div class="result-callout">
+            <span class="result-label">Segmentation-oriented plan</span>
+            <strong>0.7032</strong>
+            <span>MSRS segmentation mIoU</span>
+          </div>
+          <div class="result-callout result-callout-orange">
+            <span class="result-label">Detection-oriented plan</span>
+            <strong>0.9570</strong>
+            <span>MSRS detection mAP<sub>50</sub></span>
+          </div>
+          <p class="result-note">Task-conditioned plan comparison on MSRS (reported in the manuscript). The segmentation-oriented plan yields higher segmentation mIoU (0.7032 vs. 0.6674), while the detection-oriented plan yields higher detection mAP<sub>50</sub> (0.9570 vs. 0.9125), consistent with their different objectives.</p>
+          <a class="text-link" href="#task-table">View comparison table <span>↓</span></a>
+        </div>
+      </div>
+      <div class="table-wrap" id="task-table">
+        <table>
+          <thead><tr><th>Agent plan</th><th>Segmentation mIoU ↑</th><th>Detection mAP<sub>50</sub> ↑</th><th>Detection mAP<sub>50:95</sub> ↑</th></tr></thead>
+          <tbody>
+            <tr><td><span class="table-plan plan-blue"></span>Segmentation-oriented</td><td><strong>0.7032</strong></td><td>0.9125</td><td>0.6970</td></tr>
+            <tr><td><span class="table-plan plan-orange"></span>Detection-oriented</td><td>0.6674</td><td><strong>0.9570</strong></td><td><strong>0.7315</strong></td></tr>
+          </tbody>
+        </table>
+        <p class="table-caption">Values reproduced from the task-oriented agent-plan comparison reported in the manuscript. Bold values indicate the better result for the corresponding metric.</p>
+      </div>
+    </section>
+
+    <section class="section-shell efficiency-section" id="efficiency">
+      <div class="section-heading">
+        <p class="section-kicker">Practical inference</p>
+        <h2>Separate prior generation from cached fusion.</h2>
+        <p class="section-intro">AgentFuse supports caching the structured plan and spatial support for a fixed image–task pair, avoiding repeated agent-prior generation.</p>
+      </div>
+      <div class="efficiency-grid">
+        <div class="efficiency-card"><span class="efficiency-value">14.72 s</span><span class="efficiency-label">Full online pipeline</span><span class="efficiency-detail">Includes agent-prior generation and fusion</span></div>
+        <div class="efficiency-card"><span class="efficiency-value">710 ms</span><span class="efficiency-label">Cached fusion inference</span><span class="efficiency-detail">After plan and support-mask caching</span></div>
+        <div class="efficiency-card"><span class="efficiency-value">9.40M</span><span class="efficiency-label">Trainable fusion parameters</span><span class="efficiency-detail">Internal SAM ViT-H components remain frozen</span></div>
+      </div>
+      <p class="footnote">Efficiency values follow the manuscript's reported MSRS inference analysis. The online latency includes prior generation; cached fusion latency excludes that stage.</p>
+    </section>
+
+    <section class="section-shell resources-section" id="resources">
+      <div class="resource-panel">
+        <div>
+          <p class="section-kicker">Resources</p>
+          <h2>Research artifacts</h2>
+          <p>Links will be enabled when the corresponding materials are ready for public release.</p>
+        </div>
+        <div class="resource-actions">
+          <a class="resource-link is-disabled" id="resource-paper" href="#resources" aria-disabled="true"><span class="resource-icon">PDF</span><span><strong>Paper</strong><small>Coming soon</small></span></a>
+          <a class="resource-link is-disabled" id="resource-code" href="#resources" aria-disabled="true"><span class="resource-icon">{ }</span><span><strong>Code</strong><small>Coming soon</small></span></a>
+          <a class="resource-link" href="#citation"><span class="resource-icon">Bib</span><span><strong>BibTeX</strong><small>Copy citation template</small></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell citation-section" id="citation">
+      <div class="section-heading heading-row">
+        <div><p class="section-kicker">Citation</p><h2>BibTeX</h2></div>
+        <button class="button button-secondary" id="copy-bibtex">Copy BibTeX</button>
+      </div>
+      <pre class="bibtex-block"><code id="bibtex-code">@misc{agentfuse2026,
+  title  = {AgentFuse: Task-Driven Agentic Evidence Arbitration for Infrared-Visible Image Fusion},
+  year   = {2026},
+  note   = {Manuscript; please update author and publication details before citation}
+}</code></pre>
+      <p class="citation-note" id="copy-status" aria-live="polite">This is an editable citation template. Update author and publication metadata before public release.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner"><a class="brand footer-brand" href="#top"><span class="brand-mark">AF</span><span>AgentFuse</span></a><span>Task-driven evidence arbitration for infrared–visible image fusion.</span><a href="#top" class="back-top">Back to top ↑</a></div>
+  </footer>
+</body>
+</html>
