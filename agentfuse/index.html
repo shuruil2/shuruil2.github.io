@@ -1,32 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffffff">
-  <meta name="description" content="AgentFuse: Task-Driven Agentic Evidence Arbitration for Infrared-Visible Image Fusion. A structured vision-language plan controls spatial prompting, prompt modulation, and expert routing for downstream perception.">
-  <meta property="og:type" content="website"><meta property="og:title" content="AgentFuse: Task-Driven Agentic Evidence Arbitration"><meta property="og:description" content="From high-level task reasoning to executable controls for infrared-visible image fusion."><meta property="og:image" content="assets/agentfuse-framework.png">
-  <title>AgentFuse: Task-Driven Agentic Evidence Arbitration for Infrared–Visible Image Fusion</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="stylesheet" href="styles.css"><script defer src="config.js"></script><script defer src="script.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Task-Driven Agentic Evidence Arbitration for Infrared–Visible Image Fusion.">
+  <meta property="og:title" content="AgentFuse | Task-Driven Agentic Evidence Arbitration">
+  <meta property="og:description" content="Research project page for AgentFuse: task-aware infrared–visible fusion.">
+  <meta property="og:image" content="assets/framework-20261027.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=5">
+  <script defer src="config.js?v=6"></script>
+  <script defer src="script.js?v=3"></script>
+  <title>AgentFuse — Task-Driven Agentic Evidence Arbitration for Infrared–Visible Image Fusion</title>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="nav-wrap"><a class="brand" href="#top" aria-label="AgentFuse home"><span class="brand-mark">AF</span><span>AgentFuse</span></a><button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><nav class="main-nav" id="main-nav" aria-label="Main navigation"><a href="#abstract">Abstract</a><a href="#framework">Framework</a><a href="#experiments">Experiments</a><a href="#efficiency">Efficiency</a><a href="#citation">BibTeX</a></nav></div></header>
-  <main id="main" class="page-shell">
-    <section class="title-section" id="top"><p class="eyebrow">Research Project · Infrared–Visible Image Fusion</p><h1>AgentFuse: Task-Driven Agentic Evidence Arbitration for Infrared–Visible Image Fusion</h1><p class="author-block" id="author-block">Author names and affiliations</p><div class="title-rule"></div><div class="hero-actions"><a class="button button-primary is-disabled" id="paper-link" href="#resources" aria-disabled="true">Paper PDF ↗</a><a class="button button-secondary is-disabled" id="code-link" href="#resources" aria-disabled="true">Code ↗</a><a class="button button-quiet" href="#citation">BibTeX ↓</a></div><p class="availability-note">Paper and code links will be enabled when the materials are ready for public release.</p></section>
-    <section class="content-section abstract-section" id="abstract" aria-labelledby="abstract-heading"><div class="section-heading"><span class="section-number">01</span><h2 id="abstract-heading">Abstract</h2></div><div class="abstract-text"><p>Infrared–visible image fusion aims to integrate complementary multimodal evidence for downstream perception, yet existing methods typically learn a shared fusion policy that cannot adapt to task- and sample-specific requirements at inference time. To address this limitation, we propose <strong>AgentFuse</strong>, a task-driven evidence arbitration framework that reformulates fusion from static multimodal aggregation into task reasoning–guided adaptive control. Given an infrared–visible image pair and a task instruction, a vision-language agent jointly interprets the task objective and current observation to generate a structured plan describing spatial relevance, modality preference, and suitable fusion operations. AgentFuse translates this high-level plan into executable controls through three coordinated mechanisms: spatial prompting to determine where evidence should be emphasized, modality-aware prompt modulation to determine what evidence should be prioritized, and dynamic expert routing to determine how the selected evidence should be integrated. This design enables a unified fusion network to produce task-specific behaviors while adapting its evidence allocation to individual samples. Extensive experiments on multiple infrared–visible fusion benchmarks for semantic segmentation and object detection demonstrate that AgentFuse consistently generates fused images with improved downstream perception performance.</p><p class="keywords"><strong>Keywords:</strong> Infrared–visible image fusion; vision-language models; task-aware fusion; semantic segmentation; object detection.</p></div></section>
-    <section class="content-section framework-section" id="framework" aria-labelledby="framework-heading"><div class="section-heading"><span class="section-number">02</span><h2 id="framework-heading">Framework Overview</h2></div><p class="section-intro">AgentFuse bridges high-level task reasoning and low-level fusion control. The structured plan is translated into executable spatial, modulation, and operation signals that guide a unified fusion network.</p><figure class="framework-figure"><a href="assets/agentfuse-framework.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution AgentFuse framework figure"><img src="assets/agentfuse-framework.png" alt="AgentFuse framework showing Structured Agent Plan, Executable Controls, and Unified Agent-Conditioned Fusion, including Spatial Prompting, Prompt Modulation, and Expert Routing." fetchpriority="high"></a><figcaption>Overview of AgentFuse. The agent generates a structured plan that is converted into executable controls for spatial prompting, plan-conditioned prompt modulation, and operation-aware expert routing.</figcaption></figure></section>
-    <section class="content-section experiments-section" id="experiments" aria-labelledby="experiments-heading"><div class="section-heading"><span class="section-number">03</span><h2 id="experiments-heading">Experiments</h2></div><p class="section-intro">We evaluate AgentFuse by the downstream perception performance of fused images, using the same downstream architectures and evaluation protocols across fusion methods.</p>
-      <div class="subsection-heading"><h3>Task-conditioned planning</h3><p>Different task instructions lead to different evidence priorities and downstream behavior on MSRS.</p></div><div class="table-wrap"><table><thead><tr><th>Fusion plan</th><th>Seg. mIoU ↑</th><th>Det. Precision ↑</th><th>Det. Recall ↑</th><th>mAP<sub>50</sub> ↑</th><th>mAP<sub>50:95</sub> ↑</th></tr></thead><tbody><tr><td>Segmentation-oriented</td><td><strong>0.7032</strong></td><td>0.9548</td><td>0.8284</td><td>0.9125</td><td>0.6970</td></tr><tr><td>Detection-oriented</td><td>0.6674</td><td><strong>0.9795</strong></td><td><strong>0.8800</strong></td><td><strong>0.9570</strong></td><td><strong>0.7315</strong></td></tr></tbody></table><p class="table-caption">Task-oriented plan comparison on MSRS, as reported in Table XI of the manuscript.</p></div>
-      <div class="subsection-heading"><h3>Semantic segmentation on MSRS</h3><p>Downstream mIoU using DeepLabV3 trained on fused training images.</p></div><div class="table-wrap narrow-table"><table><thead><tr><th>Fusion method</th><th>mIoU ↑</th><th>Fusion method</th><th>mIoU ↑</th></tr></thead><tbody><tr><td>SwinFuse</td><td>0.6017</td><td>MRFS</td><td>0.6669</td></tr><tr><td>SIBA</td><td>0.6889</td><td>DCEvo</td><td>0.6645</td></tr><tr><td>PSFusion</td><td>0.6825</td><td>CtrlFuse</td><td>0.6598</td></tr><tr><td>TDFuse</td><td>0.6648</td><td><strong>AgentFuse</strong></td><td><strong class="best-score">0.7032</strong></td></tr></tbody></table><p class="table-caption">Semantic segmentation results on MSRS, as reported in Table III of the manuscript.</p></div>
-      <div class="subsection-heading"><h3>Qualitative task-conditioned comparison</h3><p>All three examples are evaluated on semantic segmentation. For each example, the first row uses the segmentation-oriented support mask and the second row uses the detection-oriented support mask.</p></div><figure class="results-figure"><a href="assets/task-conditioned-comparison.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution task-conditioned comparison figure"><img src="assets/task-conditioned-comparison.png" alt="Three semantic segmentation examples comparing visible and infrared inputs, support masks, segmentation predictions, and ground truth. Highlighted discrepancies show missing classes and smoother boundaries, wrong classes, and false-positive class assignment." loading="lazy"></a><figcaption>Task-conditioned planning on the same visible–infrared input pairs. The highlighted regions illustrate differences in class completeness, boundary smoothness, and false-positive class assignment.</figcaption></figure>
-    </section>
-    <section class="content-section efficiency-section" id="efficiency" aria-labelledby="efficiency-heading"><div class="section-heading"><span class="section-number">04</span><h2 id="efficiency-heading">Inference Efficiency</h2></div><p class="section-intro">The online pipeline includes agent-prior generation; when the plan and support mask are cached, fusion inference avoids repeating this stage.</p><div class="efficiency-grid"><div class="efficiency-item"><span class="metric-value">14.72 s</span><span class="metric-label">Full online pipeline</span><span class="metric-note">Prior generation plus fusion inference</span></div><div class="efficiency-item"><span class="metric-value">710 ms</span><span class="metric-label">Cached-prior fusion</span><span class="metric-note">Fusion inference with cached plan and support mask</span></div><div class="efficiency-item"><span class="metric-value">9.40M</span><span class="metric-label">Trainable parameters</span><span class="metric-note">Fusion core; internal SAM components remain frozen</span></div></div><p class="table-caption">Measurements on MSRS at 640 × 480 resolution with batch size 1 on a single RTX 3090, as reported in the manuscript.</p></section>
-    <section class="content-section resources-section" id="resources" aria-labelledby="resources-heading"><div class="section-heading"><span class="section-number">05</span><h2 id="resources-heading">Resources</h2></div><div class="resource-list"><a class="resource-link is-disabled" id="resource-paper" href="#resources" aria-disabled="true"><span class="resource-icon">PDF</span><span><strong>Paper</strong><small>Manuscript link to be added</small></span><span class="resource-arrow">↗</span></a><a class="resource-link is-disabled" id="resource-code" href="#resources" aria-disabled="true"><span class="resource-icon">{ }</span><span><strong>Code</strong><small>Repository link to be added</small></span><span class="resource-arrow">↗</span></a><a class="resource-link" href="#citation"><span class="resource-icon">Bib</span><span><strong>BibTeX</strong><small>Copy citation template</small></span><span class="resource-arrow">↓</span></a></div></section>
-    <section class="content-section citation-section" id="citation" aria-labelledby="citation-heading"><div class="citation-heading"><div class="section-heading"><span class="section-number">06</span><h2 id="citation-heading">Citation</h2></div><button class="copy-button" id="copy-bibtex" type="button">Copy BibTeX</button></div><pre class="bibtex-block"><code id="bibtex-code">@misc{agentfuse2026,
-  title = {AgentFuse: Task-Driven Agentic Evidence Arbitration for Infrared-Visible Image Fusion},
-  year = {2026},
-  note = {Manuscript; update author and publication details before citation}
-}</code></pre><p class="copy-status" id="copy-status" aria-live="polite">Update author and publication details before using the citation.</p></section>
-  </main>
-  <footer class="site-footer"><div class="footer-inner"><a class="footer-brand" href="#top">AgentFuse</a><span>Task-driven evidence arbitration for infrared–visible image fusion.</span><a href="#top">Back to top ↑</a></div></footer>
+<main id="top">
+  <header class="paper-header reading-width">
+    <h1>Task-Driven Agentic Evidence Arbitration for Infrared–Visible Image Fusion</h1>
+    <p id="author-line" class="authors" hidden></p>
+    <div class="paper-actions">
+      <a id="paper-link" class="action-btn" hidden>Paper <span aria-hidden="true">↗</span></a>
+      <a id="code-link" class="action-btn" hidden>Code <span aria-hidden="true">↗</span></a>
+      <a class="action-btn subtle" href="#citation">BibTeX <span aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+
+  <section id="abstract" class="reading-width section abstract-section">
+    <h2>Abstract</h2>
+    <p>Infrared–visible image fusion aims to integrate complementary multimodal evidence for downstream perception, yet existing methods typically learn a shared fusion policy that cannot adapt to task- and sample-specific requirements at inference time. To address this limitation, we propose <strong>AgentFuse</strong>, a task-driven evidence arbitration framework that reformulates fusion from static multimodal aggregation into task reasoning–guided adaptive control. Given an infrared–visible image pair and a task instruction, a vision-language agent jointly interprets the task objective and current observation to generate a structured plan describing spatial relevance, modality preference, and suitable fusion operations. AgentFuse translates this high-level plan into executable controls through three coordinated mechanisms: spatial prompting to determine where evidence should be emphasized, modality-aware prompt modulation to determine what evidence should be prioritized, and dynamic expert routing to determine how the selected evidence should be integrated. This design enables a unified fusion network to produce task-specific behaviors while adapting its evidence allocation to individual samples. Extensive experiments on multiple infrared–visible fusion benchmarks for semantic segmentation and object detection demonstrate that AgentFuse consistently generates fused images with improved downstream perception performance.</p>
+  </section>
+
+  <section id="framework" class="section framework-section">
+    <div class="reading-width">
+      <h2>Framework</h2>
+      <p class="section-lead">From high-level agent reasoning to executable control over a unified fusion network.</p>
+    </div>
+    <figure class="figure-width framework-figure">
+      <button class="framework-preview" id="open-figure" type="button" aria-label="Enlarge the AgentFuse framework figure">
+        <img src="assets/framework-20261027.png" width="3420" height="1300" alt="Final user-supplied AgentFuse framework: inputs and Qwen2.5-VL agent, Structured Agent Plan, Executable Controls, and Unified Agent-Conditioned Fusion." decoding="async">
+      </button>
+      <figcaption>
+        <span><strong>Figure 1.</strong> AgentFuse framework. The structured plan specifies spatial relevance, modality preferences, and fusion operations, which are translated into executable controls for spatial prompting, prompt modulation, and expert routing.</span>
+        <span class="figure-links"><button type="button" class="text-link" id="open-figure-bottom">Enlarge figure</button><a class="text-link" href="assets/framework-source-20261027.pdf" target="_blank" rel="noopener noreferrer">View original PDF ↗</a></span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section id="experiments" class="reading-width section experiments-section">
+    <h2>Experiments</h2>
+    <p class="section-lead">Evaluation focuses on downstream perception, including semantic segmentation and object detection.</p>
+    <div class="experiment-block">
+      <div class="block-heading"><span class="block-index">01</span><h3>Task-conditioned planning</h3></div>
+      <p>The same infrared–visible pair can benefit from different fusion priorities depending on the downstream task.</p>
+      <div class="table-scroller"><table><thead><tr><th>Agent plan</th><th>Segmentation mIoU ↑</th><th>Detection mAP<sub>50</sub> ↑</th></tr></thead>
+      <tbody><tr><td>Segmentation-oriented</td><td class="best">0.7032</td><td>0.9125</td></tr><tr><td>Detection-oriented</td><td>0.6674</td><td class="best">0.9570</td></tr></tbody></table></div>
+      <p class="table-note">MSRS task-specific plan comparison. Both settings use the same underlying fusion network; downstream metrics are computed for their respective tasks.</p>
+    </div>
+    <div class="experiment-block">
+      <div class="block-heading"><span class="block-index">02</span><h3>Semantic segmentation</h3></div>
+      <p>DeepLabV3 is fine-tuned on fused training images generated by each method, as reported in Table III of the manuscript.</p>
+      <div class="table-scroller"><table><thead><tr><th>Fusion method</th><th>MSRS mIoU ↑</th></tr></thead>
+      <tbody><tr><td>SwinFuse</td><td>0.6017</td></tr><tr><td>CtrlFuse</td><td>0.6598</td></tr><tr><td>MRFS</td><td>0.6669</td></tr><tr><td>DCEvo</td><td>0.6645</td></tr><tr><td>TDFuse</td><td>0.6648</td></tr><tr><td>PSFusion</td><td>0.6825</td></tr><tr><td>SIBA</td><td>0.6889</td></tr><tr class="ours"><td><strong>AgentFuse</strong></td><td class="best">0.7032</td></tr></tbody></table></div>
+      <p class="table-note">Reported results from the current AgentFuse manuscript.</p>
+    </div>
+    <div class="experiment-block">
+      <div class="block-heading"><span class="block-index">03</span><h3>Object detection</h3></div>
+      <p>YOLOv8s is fine-tuned on fused training images generated by each method. The table reports the manuscript’s MSRS and DroneVehicle mAP<sub>50</sub> results.</p>
+      <div class="table-scroller"><table><thead><tr><th>Fusion method</th><th>MSRS ↑</th><th>DroneVehicle ↑</th></tr></thead>
+      <tbody><tr><td>SwinFuse</td><td>0.8770</td><td>0.738</td></tr><tr><td>MRFS</td><td>0.8790</td><td>0.727</td></tr><tr><td>SIBA</td><td>0.9165</td><td>0.736</td></tr><tr><td>DCEvo</td><td>0.9200</td><td>0.717</td></tr><tr><td>PSFusion</td><td>0.9240</td><td>0.667</td></tr><tr><td>CtrlFuse</td><td>0.9400</td><td>0.728</td></tr><tr><td>TDFuse</td><td>0.9375</td><td>0.738</td></tr><tr class="ours"><td><strong>AgentFuse</strong></td><td class="best">0.9570</td><td class="best">0.745</td></tr></tbody></table></div>
+      <p class="table-note">mAP<sub>50</sub>; manuscript Table V.</p>
+    </div>
+    <div class="experiment-block visual-block">
+      <div class="block-heading"><span class="block-index">04</span><h3>Qualitative comparisons</h3></div>
+      <p>Examples from the manuscript compare segmentation and detection results across fusion methods. Select an image to view it at full size.</p>
+      <figure class="result-figure"><a href="assets/msrs-segmentation.png" target="_blank" rel="noopener noreferrer"><img src="assets/msrs-segmentation.png" alt="Semantic segmentation comparisons on MSRS, with visible and infrared inputs, predictions from fusion methods, and ground truth." loading="lazy"></a><figcaption><strong>MSRS semantic segmentation.</strong> Manuscript Figure 2 compares predictions and ground truth across four scenes.</figcaption></figure>
+      <figure class="result-figure"><a href="assets/fmb-segmentation.png" target="_blank" rel="noopener noreferrer"><img src="assets/fmb-segmentation.png" alt="Semantic segmentation comparisons on FMB across fusion methods and ground truth." loading="lazy"></a><figcaption><strong>FMB semantic segmentation.</strong> Manuscript Figure 3 compares predictions across three scenes.</figcaption></figure>
+      <figure class="result-figure"><a href="assets/msrs-detection.png" target="_blank" rel="noopener noreferrer"><img src="assets/msrs-detection.png" alt="Object detection comparisons on MSRS, with visible and infrared inputs and detection results from fusion methods." loading="lazy"></a><figcaption><strong>MSRS object detection.</strong> Manuscript Figure 4 shows detection results for persons and vehicles.</figcaption></figure>
+      <h3 class="comparison-heading">Task-conditioned planning</h3>
+      <p>For the same input pairs, the upper prediction uses a segmentation-oriented support mask and the lower prediction uses a detection-oriented mask. Both use the same downstream segmentation model.</p>
+      <figure class="qualitative-figure"><a href="assets/task-conditioned-comparison.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size task-conditioned comparison"><img src="assets/task-conditioned-comparison.png" width="521" height="565" loading="lazy" alt="Three semantic segmentation examples showing input pairs, support masks, segmentation predictions and highlighted discrepancies."></a><figcaption>Manuscript Figure 6 highlights missing classes, boundaries, wrong-class predictions, and false-positive class assignments.</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="citation" class="reading-width section citation-section">
+    <div class="citation-title"><h2>Citation</h2><button type="button" id="copy-citation" class="action-btn subtle">Copy BibTeX</button></div>
+    <pre id="bibtex" class="bibtex">@misc{agentfuse2026,
+  title = {Task-Driven Agentic Evidence Arbitration for Infrared-Visible Image Fusion},
+  author = {Liu, Shurui and Lu, Ziqian and Wang, Zhao and Yu, Yunlong},
+  note = {Manuscript; update publication details before citation}
+}</pre>
+    <p class="table-note" id="copy-status">Bibliographic details will be updated upon publication.</p>
+  </section>
+</main>
+<footer class="site-footer"><span>AgentFuse · Research project page</span><span>Infrared–visible image fusion</span></footer>
+<dialog id="figure-dialog" class="figure-dialog" aria-label="Full resolution AgentFuse framework">
+  <div class="dialog-header"><span>AgentFuse framework</span><button id="close-figure" type="button" aria-label="Close figure viewer">Close ×</button></div>
+  <div class="dialog-image"><img src="assets/framework-20261027.png" alt="Full-resolution AgentFuse framework diagram"></div>
+</dialog>
 </body>
 </html>
