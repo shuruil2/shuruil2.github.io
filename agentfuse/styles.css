@@ -54,3 +54,37 @@ table{font-size:14px}th{font-size:12px;background:#f7f7f7;color:#555}td,th{paddi
 .result-figure{margin:26px 0 34px}.result-figure a{display:block}.result-figure img{display:block;width:100%;height:auto}.result-figure figcaption{color:#666;font-size:12px;line-height:1.65;margin-top:9px}.comparison-heading{margin:42px 0 10px;font-size:17px;font-weight:650}.visual-block>.comparison-heading+p{font-size:14px;line-height:1.65;color:var(--text)}
 
 .paper-header h1 span{display:block}.paper-header h1 .project-name{margin-bottom:8px}
+
+/* Restrained academic color and section rhythm */
+:root{--ink:#202b36;--text:#384653;--muted:#637180;--line:#dce4ea;--blue:#315f85}
+body{background:#fbfcfd}
+.paper-header{border-bottom:1px solid var(--line)}
+.paper-header h1{color:#202c37}
+.paper-header h1 .project-name{color:#202c37;font-size:.9em;letter-spacing:-.02em;margin-bottom:12px}
+.authors{color:#416788}
+.action-btn.subtle{background:#fff;border-color:#c9d8e3;color:#315775}
+.action-btn.subtle:hover{background:#eef4f8;border-color:#9eb8ca}
+.section h2{color:#243746}
+.section h2::after{content:"";display:block;width:34px;height:2px;margin-top:10px;background:#91afc4}
+.framework-preview{background:#fff;outline:1px solid #e4ebf0}
+.framework-figure figcaption{color:#60707d}
+.block-index{color:#7190a6}
+th{background:#eef3f6;color:#526675}
+.ours{background:#edf4f8}
+.bibtex{background:#f2f6f8;border-color:#dbe5eb}
+.site-footer{background:#f4f7f9}
+@media(max-width:640px){.paper-header h1 .project-name{margin-bottom:10px}.section h2::after{margin-top:8px}}
+
+/* Fine typographic and figure details */
+.authors{font-size:15px;letter-spacing:.01em}
+.section h2::after{width:42px}
+.experiment-block + .experiment-block{border-top:1px solid #e3e9ed;padding-top:28px}
+.block-heading{align-items:baseline}
+.block-index{font-variant-numeric:tabular-nums}
+table{font-variant-numeric:tabular-nums}
+.table-scroller{border-top:1px solid #b7cbd9;border-bottom:1px solid #cbd9e2}
+th{letter-spacing:.01em}
+.framework-figure figcaption,.result-figure figcaption,.qualitative-figure figcaption{color:#596b79}
+.result-figure figcaption{border-left:2px solid #bfd0dc;padding-left:11px}
+.result-figure a:focus-visible,.framework-preview:focus-visible,.action-btn:focus-visible,.text-link:focus-visible{outline:2px solid #315f85;outline-offset:3px}
+@media(max-width:640px){.authors{font-size:14px}.experiment-block + .experiment-block{padding-top:23px}}
