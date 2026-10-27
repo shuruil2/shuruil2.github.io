@@ -52,3 +52,5 @@ table{font-size:14px}th{font-size:12px;background:#f7f7f7;color:#555}td,th{paddi
  .citation-section{padding-bottom:55px}
 }
 .result-figure{margin:26px 0 34px}.result-figure a{display:block}.result-figure img{display:block;width:100%;height:auto}.result-figure figcaption{color:#666;font-size:12px;line-height:1.65;margin-top:9px}.comparison-heading{margin:42px 0 10px;font-size:17px;font-weight:650}.visual-block>.comparison-heading+p{font-size:14px;line-height:1.65;color:var(--text)}
+
+.paper-header h1 span{display:block}.paper-header h1 .project-name{margin-bottom:8px}
